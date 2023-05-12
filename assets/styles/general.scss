@@ -74,6 +74,8 @@ body, input, a, textarea {
 }
 
 .wrapper {
+    $w: &;
+
     width: 420px;
     max-width: 420px;
 
@@ -121,11 +123,51 @@ body, input, a, textarea {
 
         background-color: $accent;
         transition: .2s ease-out;
+
+        &::after, &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 70px;
+            left: 0;
+            border-radius: 20px;
+            transition: .1s all ease-in;
+        }
+        &::after {
+            z-index: -1;
+            top: -18px;
+            max-width: 400px;
+
+            background: linear-gradient(180deg, #31394D 0%, #091739 100%);
+            transform: rotate(-3deg);
+        }
+        &::before {
+            z-index: -2;
+            top: -27px;
+            max-width: 340px;
+
+            background: linear-gradient(180deg, #4F5565 0%, #000000 53.65%);
+            transform: rotate(-5deg);
+        }
+
         &:hover {
             transition: .3s ease-in;
             background-color: $accent-hover;
+
+            &::after {
+                transition: .3s all ease-in;
+                top: -18px - 10px; //-15px base
+                transform: rotate(-6deg);
+            }
+            &::before {
+                transition: .4s all ease-out;
+                top: -27px - 15px; // -25px base
+                transform: rotate(-10deg);
+            }
         }
     }
+
+    position: relative;
 }
 
 .todo {
