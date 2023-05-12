@@ -2,34 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CAPSBOLD</title>
+    <title>Александр Попов - тестовое задание в CAPSBOLD</title>
 
     <link rel="stylesheet" href="./assets/styles/general.scss">
     <script src="./assets/scripts/index.js" defer> </script>
   </head>
   <body>
+    <div class="container">
 
-    <div class="wrapper">
-      
-      <div class="wrapper__header">
-        <h2 class="wrapper__heading">Todo list</h2>
-        <button class="wrapper__button">Add</button>
-      </div>
-
-      <div class="todo">
-        <!--
-        <div class="todo__item">
-          <input id="todo_id" type="checkbox" class="todo__checkbox" />
-          <label for="todo_id" class="todo__label"> </label>
-          <p class="todo__title">delectus aut autem</p>
-          <p class="todo__description">laboriosam mollitia et enim quasi adipisci quia provident illum</p>
+      <div class="wrapper">
+        
+        <div class="wrapper__header">
+          <h2 class="wrapper__heading">Todo list</h2>
+          <button class="wrapper__button">Add</button>
         </div>
-        -->
+        
+        <div class="todo">
+          <!--
+            Задачи генерируются через JS.
+            Всё обернуто в <label>, чтобы при клике срабатывал checkbox
+            При желании его можно легко поменять на <div />
+
+          <label for="todo_${iterator}" class="todo__item">
+              <input id="todo_${iterator}" type="checkbox" class="todo__checkbox" />
+              <div class="todo__label"> </div>
+              
+              <p class="todo__title">repellendus sunt dolores architecto voluptatum</p>
+              <p class="todo__description">laboriosam mollitia et enim quasi adipisci quia provident illum</p>
+          </label>;
+          -->
+        </div>
+        
       </div>
-
+      <a class="copyright" href="https://mrreads.ru/" target="_blank">© 2023. Александр Попов</a>
     </div>
-
   </body>
 </html>

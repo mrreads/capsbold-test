@@ -23,11 +23,11 @@ html {
 }
 
 body {
-    min-height: 100%;
+    height: 100%;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+a {
+    text-decoration: none;
 }
 
 body {
@@ -73,6 +73,16 @@ body, input, a, textarea {
     font-family: 'Montserrat', sans-serif;
 }
 
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100%;
+    padding: 25px 15px;
+}
+
 .wrapper {
     $w: &;
 
@@ -80,6 +90,7 @@ body, input, a, textarea {
     max-width: 420px;
 
     padding: 30px;
+    padding-right: 15px;
 
     background-color: $wrapper-color;
     box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.25);
@@ -93,6 +104,7 @@ body, input, a, textarea {
         align-items: center;
         
         margin-bottom: 20px;
+        padding-right: 15px;
     }
 
     &__heading {
@@ -185,6 +197,7 @@ body, input, a, textarea {
     
     scroll-snap-type: y mandatory;
     &__item {
+        padding-right: 15px;
         scroll-snap-align: start;
         
         display: grid;
@@ -243,7 +256,7 @@ body, input, a, textarea {
             }
             ~ #{$t}__description {
                 max-height: 0;
-                transition: .4s all ease-in;
+                transition: .1s all ease-out;
             }
         }
     }
@@ -286,5 +299,59 @@ body, input, a, textarea {
                 $wrapper-color 100%
             );
         }
+    }
+
+    // scrollbar firefox
+    scrollbar-color: $accent $wrapper-color;
+    scrollbar-width: thin;
+    
+
+    // scrollbar chrome
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $accent;
+        border-radius: 6px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $accent-hover; 
+    }
+}
+
+.copyright {
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #414B62;
+    opacity: 1;
+    transition: .2s all ease-in;
+    &:hover {
+        opacity: .6;
+        transition: .3s all ease-out;
+        color: #FFFFFF;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .wrapper {
+        &__button {
+            &::after {
+            max-width: 320px;
+            }
+            &::before {
+                max-width: 280px;
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .wrapper {
+        margin-top: 50px;
     }
 }
