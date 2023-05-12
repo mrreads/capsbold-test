@@ -1,0 +1,122 @@
+// FONTS
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
+// VARS
+$background-color: #161C2E;
+$accent: #FF8469;
+$accent-hover: #D95133;
+
+$gradient-1: rgba(37, 46, 66, 0);
+$gradient-2: #252E42;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    position: relative;
+    background-color: $background-color;
+    &::after {
+        max-width: 1440px;
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 50%;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        animation: 12s gradient linear infinite;
+        transition: .3s all;
+
+        background: radial-gradient($gradient-2 0%, $gradient-1 67%);
+        
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body, input, a, textarea {
+    font-weight: 500;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+    max-width: 420px;
+    padding: 30px;
+
+    background-color: #252E42;
+    box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.25);
+    border-radius: 20px 0px 40px;
+    
+    
+    &__header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        
+        margin-bottom: 20px;
+    }
+
+    &__heading {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 34px;
+        color: #FFFFFF;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 6px 13px;
+        border-radius: 7px;
+        
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        
+        border: 0;
+        outline: 0;
+        
+        cursor: pointer;
+
+        background-color: $accent;
+        transition: .2s ease-out;
+        &:hover {
+            transition: .3s ease-in;
+            background-color: $accent-hover;
+        }
+    }
+}
